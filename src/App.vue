@@ -1,8 +1,9 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
+  <Menubar :model="items">
+
+  </Menubar>
+    <Toast position="top-left" group='tl'/>
+
   <router-view/>
 </template>
 
@@ -28,3 +29,27 @@
   }
 }
 </style>
+<script>
+import OntoLoader from '@/components/OntoLoader.vue'
+import Menubar from "primevue/menubar"
+import Toast from "primevue/toast";
+import {items} from '@/router/menu.js'
+
+export default {
+components:{
+  Menubar,Toast
+},
+mounted(){
+      this.axios.get("http://localhost:3000/ontologies").then((response) => {
+        console.log(response)
+        this.$store.dispatch("loadOntologies",{ontologies:response.data});
+      });
+
+},
+data(){
+  return{
+  items:items()}
+
+}  
+}
+</script>

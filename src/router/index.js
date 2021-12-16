@@ -1,12 +1,30 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
-
+import Explore from '../views/Explore.vue'
+import OntoInspecter from '../components/OntoInspecter.vue'
+import ClassesInspector from '../views/ClassesInspector.vue'
 const routes = [
   {
     path: '/',
     name: 'Home',
     component: Home
   },
+  {
+    path: '/explore',
+    name: 'Explore',
+    component: Explore
+  },
+  {
+    path:'/class',
+    name:'Class',
+    component:ClassesInspector
+  }
+  ,{
+  path:'/inspect',
+  name:'Inspect',
+  component:OntoInspecter
+}
+  ,
   {
     path: '/about',
     name: 'About',
