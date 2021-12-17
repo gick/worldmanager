@@ -17,6 +17,7 @@ COPY . .
 
 WORKDIR /app/web
 # build app for production with minification
+RUN npm install
 
 RUN npm run build
 
