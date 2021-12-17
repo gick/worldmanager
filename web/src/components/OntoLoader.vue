@@ -97,7 +97,7 @@ export default {
       formData.append("encoding", this.language.code);
       formData.append("name",this.name)
       this.axios
-        .post("http://localhost:3000/uploadOntology", formData, {
+        .post("/uploadOntology", formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },

@@ -8,7 +8,7 @@ if(dev){
 if(prod){
   mongoStringConnect='mongodb://mongo:27017/worldmanager'
 }
-const express = require('express');
+const express = require('express')
 const Hylar = require('hylar')
 const h=new Hylar()
 const mongoose = require('mongoose');
@@ -21,7 +21,7 @@ mongoose.connect(mongoStringConnect, { useNewUrlParser: true, useUnifiedTopology
 });
 
 app.use(cors({credentials: true, origin: 'http://localhost:8080'}));
-
+app.use(express.static('web/dist'))
 app.use('/',require('./routes/ontoRoutes'))
 app.use('/',require('./routes/actionRoutes'))
 

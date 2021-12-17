@@ -90,7 +90,7 @@ export default {
     this.$refs.op.toggle(event);
 },
     getHierarchy() {
-      this.axios.get("http://localhost:3000/ontologyHierarchy", {
+      this.axios.get("/ontologyHierarchy", {
         params: {
           id: this.currentOntology._id,
         },
@@ -98,7 +98,7 @@ export default {
     },
     validate() {
       this.axios
-        .get("http://localhost:3000/validate", {
+        .get("/validate", {
           params: {
             id: this.currentOntology._id,
           },

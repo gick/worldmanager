@@ -15,7 +15,7 @@ export default class NodeService {
 
 
     async getHierarchy() {
-        let resp = await axios.get('http://localhost:3000/jsonHierarchy', { params: { id: this.ontologyId } })
+        let resp = await axios.get('/jsonHierarchy', { params: { id: this.ontologyId } })
         this.sparqlResults = resp.data.statements.results
 
         for (let item of this.sparqlResults) {

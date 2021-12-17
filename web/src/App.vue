@@ -40,7 +40,7 @@ components:{
   Menubar,Toast
 },
 mounted(){
-      this.axios.get("http://localhost:3000/ontologies").then((response) => {
+      this.axios.get("/ontologies").then((response) => {
         console.log(response)
         this.$store.dispatch("loadOntologies",{ontologies:response.data});
       });

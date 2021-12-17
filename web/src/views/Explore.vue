@@ -74,7 +74,7 @@ export default {
     deleteOnto(data) {
       console.log(data);
       this.axios
-        .get("http://localhost:3000/deleteOntology", {
+        .get("/deleteOntology", {
           params: { id: data._id },
         })
         .then((response) => {

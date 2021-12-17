@@ -22,7 +22,7 @@ export default createStore({
   },
   actions: {
     loadOntologies({commit}){
-      axios.get("http://localhost:3000/ontologies").then((response) => {
+      axios.get("/ontologies").then((response) => {
         commit('addOntologies',{ontologies:response.data})
       });
      //   this.$store.commit("addOntologie",{ontologies:response.data});

@@ -62,7 +62,7 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>`
     runSparqlQuery() {
         console.log(this.query)
       this.axios
-        .get("http://localhost:3000/runQuery", {
+        .get("/runQuery", {
           params: {
             id: this.$store.state.currentOntology._id,
             query:this.query
