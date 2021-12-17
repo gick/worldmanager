@@ -10,14 +10,17 @@ export default {
     },
     data(){
         return{
-            currentOnto:null,
         }
     
     },
     computed:{
         ontologies(){
             return this.$store.state.ontologies
+        },
+        currentOnto(){
+            return this.$store.state.currentOntology
         }
+
     },
     methods:{
         handleChange(e){

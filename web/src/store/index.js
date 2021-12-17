@@ -13,6 +13,10 @@ export default createStore({
       console.log(payload.ontologies)
       state.ontologies=[]
       state.ontologies=payload.ontologies
+      if(state.currentOntology._id){
+        let temp=state.ontologies.find(item=>{return item._id==state.currentOntology._id})
+        state.currentOntology=temp
+      }
     },
     deleteOntology(state,payload){
       console.log(payload)

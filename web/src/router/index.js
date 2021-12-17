@@ -3,6 +3,10 @@ import Home from '../views/Home.vue'
 import Explore from '../views/Explore.vue'
 import OntoInspecter from '../components/OntoInspecter.vue'
 import ClassesInspector from '../views/ClassesInspector.vue'
+import RuleViewer from '../views/RuleViewer.vue'
+import QueryViewer from '../views/QueryViewer.vue'
+import ExploreQuery from '../components/ExploreQuery.vue'
+
 const routes = [
   {
     path: '/',
@@ -14,6 +18,23 @@ const routes = [
     name: 'Explore',
     component: Explore
   },
+  {
+    path: '/rules',
+    name: 'Rule',
+    component: RuleViewer
+  },
+  {
+    path: '/queryView',
+    name: 'QueryView',
+    component: ExploreQuery
+  },
+
+  {
+    path: '/query',
+    name: 'Query',
+    component: QueryViewer
+  },
+
   {
     path:'/class',
     name:'Class',

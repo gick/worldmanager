@@ -102,14 +102,15 @@ export default {
             "Content-Type": "multipart/form-data",
           },
         })
-        .then(() =>
+        .then(() =>{
+          this.$store.dispatch('loadOntologies')
           this.$toast.add({
             severity: ToastSeverity.INFO,
             summary: "Info Message",
             detail: "Ontology successfully loaded",
             life: 3000,
             group: "tl",
-          })
+          })}
         );
     },
   },

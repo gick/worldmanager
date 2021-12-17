@@ -1,14 +1,51 @@
 let AgentAction = require('../models/agentAction')
-const router = require('express').Router();
+let AgentQuery = require('../models/agentQuery')
+const { Operation } = require('../ontologyOperations/basicOperation')
+let operation = new Operation()
 
-router.get('/agentAction', async function (req, res) {
+const router = require('express').Router();
+let OntoModel = require('../models/ontoModel')
+
+router.get('/newAgentAction', async function (req, res) {
     let action = new AgentAction({ description: req.query.description,
          precondition: req.query.precondition,
-          effect: req.query.effect,
+         execution: req.query.execution,
           name:req.query.name    
         })
-    const savedAgent = await action.save()
-    res.send({ ok: true })
+    let savedAgent = await action.save()
+    let onto=await OntoModel.findById(req.query.id)
+    onto.agentAction.push(savedAgent._id)
+    onto.save()
+    res.send({ success: true })
+})
+
+router.get('/newAgentQuery', async function (req, res) {
+    let query = new AgentQuery({ query: req.query.query,
+         name: req.query.name,
+        })
+    let savedQuery = await query.save()
+    let onto=await OntoModel.findById(req.query.id)
+    onto.agentQuery.push(savedQuery._id)
+    onto.save()
+    res.send({ success: true, query:savedQuery})
+})
+
+router.get('/deleteQuery', async function (req, res) {
+    let query = await AgentQuery.findOneAndDelete(req.query.id)
+    res.send({ success: true,query:query })
+})
+
+router.get('/execQuery', async function (req, res) {
+    let query= await AgentQuery.findById(req.query.queryId)
+    operation.runQuery(req.query.ontoId,query.query)
+    .then((queryResult)=>{
+        res.send({success:true,queryResult})
+    })
+    .catch((e) => {
+        console.log(e)
+        res.send({ success: false, error: e.toString() })
+
+    })
 })
 
 router.get('/deleteAction', async function (req, res) {

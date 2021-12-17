@@ -1,7 +1,8 @@
 const multer = require('multer')
 let fs = require('fs')
 let OntoModel = require('../models/ontoModel')
-const { Operation } = require('../ontologyOperations/basicOperation')
+const { Operation } = require('../ontologyOperations/basicOperation');
+const { success } = require('hylar');
 const router = require('express').Router();
 const storage = multer.memoryStorage() // memoryStorage() is not a function
 const upload = multer({ storage: storage })
@@ -14,6 +15,8 @@ router.post('/uploadOntology', upload.single('ontology'), async function (req, r
 
 router.get('/ontologies', async function (req, res) {
     let onto = await OntoModel.find({})
+    .populate('agentAction')
+    .populate('agentQuery')
     res.send(onto)
 })
 
@@ -23,9 +26,15 @@ router.get('/deleteOntology', async function (req, res) {
 })
 
 router.get('/runQuery', async function (req, res) {
-    let onto = await operation.runQuery(req.query.id,req.query.query)
+    operation.runQuery(req.query.id,req.query.query)
+    .then((result)=>{
+        res.send({success:true,result})
+    })
+    .catch((e) => {
+        console.log(e)
+        res.send({ success: false, error: e.toString() })
 
-    res.send(onto)
+    })
 })
 
 router.get('/jsonHierarchy', async function(req,res){

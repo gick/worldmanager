@@ -30,12 +30,6 @@
         <Button id="select" :disable="validated" label="Validate" @click="validate" />
       </div>
     </div>
-    <div class="p-field p-grid">
-      <label for="hierarchy" class="p-mb-2 p-md-2 p-mb-md-0">Get class hierarchy :</label>
-      <div class="p-md-5">
-        <Button id="hierarchy" label="Compute hierarchy" @click="getHierarchy" />
-      </div>
-    </div>
 
     <Message
       severity="success"

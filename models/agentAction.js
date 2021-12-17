@@ -4,7 +4,7 @@ let mongoose = require('mongoose')
 let AgentAction = new Schema({
   description: String,
   precondition:String,
-  effect:String,
+  execution:String,
   name:String,  
 });
 

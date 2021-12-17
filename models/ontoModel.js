@@ -7,8 +7,9 @@ let Ontology = new Schema({
   rawText:String,
   name:String,
   filename:String,
-  agentAction  : [{ type: Schema.Types.ObjectId, ref: 'AgentAction' }]
-  
+  agentAction  : [{ type: Schema.Types.ObjectId, ref: 'AgentAction' }],
+  agentQuery  : [{ type: Schema.Types.ObjectId, ref: 'AgentQuery' }]
+
 });
 
 
