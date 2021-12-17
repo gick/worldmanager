@@ -5421,3 +5421,95 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
  }
 
 [ Thu Dec 16 2021 23:09:23 GMT+0000 (Coordinated Universal Time) ] Reasoner set as incremental.
+[ Fri Dec 17 2021 00:35:46 GMT+0000 (Coordinated Universal Time) ] 34 triples loaded in the store.
+[ Fri Dec 17 2021 00:35:46 GMT+0000 (Coordinated Universal Time) ] Classification started.
+[ Fri Dec 17 2021 00:35:46 GMT+0000 (Coordinated Universal Time) ] Registering derivations to dictionary...
+[ Fri Dec 17 2021 00:35:46 GMT+0000 (Coordinated Universal Time) ] Registered successfully.
+[ Fri Dec 17 2021 00:35:46 GMT+0000 (Coordinated Universal Time) ] Classification succeeded.
+[ Fri Dec 17 2021 00:35:46 GMT+0000 (Coordinated Universal Time) ] Received 
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+ SELECT ?directSub ?super 
+ WHERE { ?directSub rdfs:subClassOf ?super .
+         FILTER NOT EXISTS { ?otherSub rdfs:subClassOf ?super. 
+                             ?directSub rdfs:subClassOf ?otherSub .
+                             FILTER (?otherSub != ?directSub)
+         }
+ }
+
+[ Fri Dec 17 2021 00:35:46 GMT+0000 (Coordinated Universal Time) ] Reasoner set as incremental.
+[ Fri Dec 17 2021 00:36:06 GMT+0000 (Coordinated Universal Time) ] 34 triples loaded in the store.
+[ Fri Dec 17 2021 00:36:06 GMT+0000 (Coordinated Universal Time) ] Classification started.
+[ Fri Dec 17 2021 00:36:06 GMT+0000 (Coordinated Universal Time) ] Registering derivations to dictionary...
+[ Fri Dec 17 2021 00:36:06 GMT+0000 (Coordinated Universal Time) ] Registered successfully.
+[ Fri Dec 17 2021 00:36:06 GMT+0000 (Coordinated Universal Time) ] Classification succeeded.
+[ Fri Dec 17 2021 00:36:06 GMT+0000 (Coordinated Universal Time) ] Received 
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+ SELECT ?directSub ?super 
+ WHERE { ?directSub rdfs:subClassOf ?super .
+         FILTER NOT EXISTS { ?otherSub rdfs:subClassOf ?super. 
+                             ?directSub rdfs:subClassOf ?otherSub .
+                             FILTER (?otherSub != ?directSub)
+         }
+ }
+
+[ Fri Dec 17 2021 00:36:07 GMT+0000 (Coordinated Universal Time) ] 34 triples loaded in the store.
+[ Fri Dec 17 2021 00:36:07 GMT+0000 (Coordinated Universal Time) ] Classification started.
+[ Fri Dec 17 2021 00:36:07 GMT+0000 (Coordinated Universal Time) ] Registering derivations to dictionary...
+[ Fri Dec 17 2021 00:36:07 GMT+0000 (Coordinated Universal Time) ] Registered successfully.
+[ Fri Dec 17 2021 00:36:07 GMT+0000 (Coordinated Universal Time) ] Classification succeeded.
+[ Fri Dec 17 2021 00:36:07 GMT+0000 (Coordinated Universal Time) ] Received 
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+ SELECT ?directSub ?super 
+ WHERE { ?directSub rdfs:subClassOf ?super .
+         FILTER NOT EXISTS { ?otherSub rdfs:subClassOf ?super. 
+                             ?directSub rdfs:subClassOf ?otherSub .
+                             FILTER (?otherSub != ?directSub)
+         }
+ }
+
+[ Fri Dec 17 2021 01:59:19 GMT+0100 (Central European Standard Time) ] 33 triples loaded in the store.
+[ Fri Dec 17 2021 01:59:19 GMT+0100 (Central European Standard Time) ] Classification started.
+[ Fri Dec 17 2021 01:59:19 GMT+0100 (Central European Standard Time) ] Registering derivations to dictionary...
+[ Fri Dec 17 2021 01:59:19 GMT+0100 (Central European Standard Time) ] Registered successfully.
+[ Fri Dec 17 2021 01:59:19 GMT+0100 (Central European Standard Time) ] Classification succeeded.
+[ Fri Dec 17 2021 01:59:19 GMT+0100 (Central European Standard Time) ] Received 
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+ SELECT ?directSub ?super 
+ WHERE { ?directSub rdfs:subClassOf ?super .
+         FILTER NOT EXISTS { ?otherSub rdfs:subClassOf ?super. 
+                             ?directSub rdfs:subClassOf ?otherSub .
+                             FILTER (?otherSub != ?directSub)
+         }
+ }
+
+[ Fri Dec 17 2021 01:59:19 GMT+0100 (Central European Standard Time) ] Reasoner set as incremental.
+[ Fri Dec 17 2021 01:59:24 GMT+0100 (Central European Standard Time) ] 33 triples loaded in the store.
+[ Fri Dec 17 2021 01:59:24 GMT+0100 (Central European Standard Time) ] Classification started.
+[ Fri Dec 17 2021 01:59:24 GMT+0100 (Central European Standard Time) ] Registering derivations to dictionary...
+[ Fri Dec 17 2021 01:59:24 GMT+0100 (Central European Standard Time) ] Registered successfully.
+[ Fri Dec 17 2021 01:59:24 GMT+0100 (Central European Standard Time) ] Classification succeeded.
+[ Fri Dec 17 2021 01:59:24 GMT+0100 (Central European Standard Time) ] Received 
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+ SELECT ?directSub ?super 
+ WHERE { ?directSub rdfs:subClassOf ?super .
+         FILTER NOT EXISTS { ?otherSub rdfs:subClassOf ?super. 
+                             ?directSub rdfs:subClassOf ?otherSub .
+                             FILTER (?otherSub != ?directSub)
+         }
+ }
+
