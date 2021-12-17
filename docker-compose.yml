@@ -1,17 +1,21 @@
 version: "3"
 services:
   app:
-    container_name: express-mongo
+    container_name: express-wm
     restart: always
     build: ./
-    ports:
-      - "3000:3000"
     volumes:
       - .:/app
     links:
       - mongo
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=proxy"
+      - "traefik.http.routers.app-secure.entrypoints=websecure"
+      - "traefik.http.routers.app-secure.rule=Host(`worldmanager.victeams.eu`)"
+
   mongo:
     container_name: mongo
     image: mongo
     ports:
-      - "27018:27017"
+      - "27017:27017"
