@@ -8,14 +8,27 @@ services:
       - .:/app
     links:
       - mongo
+    networks:
+      - proxy
+      - default
+    environment:
+       PORT: 3000
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=proxy"
-      - "traefik.http.routers.app-secure.entrypoints=websecure"
-      - "traefik.http.routers.app-secure.rule=Host(`worldmanager.victeams.eu`)"
+      - "traefik.http.routers.wm-secure.entrypoints=websecure"
+      - "traefik.http.routers.wm-secure.rule=Host(`worldmanager.victeams.eu`)"
 
   mongo:
     container_name: mongo
     image: mongo
+    networks:
+      - default
     ports:
       - "27017:27017"
+
+
+networks:
+  proxy:
+    external: true
+
